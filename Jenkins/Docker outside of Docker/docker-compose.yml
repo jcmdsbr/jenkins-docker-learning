@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    jenkins:
+      container_name: jenkins
+      image: jenkins:latest
+      restart: always
+      user: root
+      build:
+        context: .
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+      ports:
+        - "8080:8080"
