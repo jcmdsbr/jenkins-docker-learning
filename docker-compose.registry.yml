@@ -4,5 +4,5 @@ services:
         ports:
             - '5000:5000'
         restart: always
-        container_name: sices-registry
+        container_name: myregistry
         image: 'registry:2'
