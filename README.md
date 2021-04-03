@@ -20,3 +20,26 @@
 * taskkill /F /PID pid_number
 ## Send image to ssh host
 * docker save my_image | ssh -C user@my.remote.host.com docker load
+
+
+# Jenkins docker
+* Jenkins CI with docker client
+
+## DockerHub
+- https://hub.docker.com/repository/docker/jcmds/jenkins-docker
+
+## How to run
+
+```
+# open terminal and execute:
+
+docker run -p 8080:8080 -p 50000:50000 \
+-v /var/jenkins_home:/var/jenkins_home \ 
+-v /var/run/docker.sock:/var/run/docker.sock \
+-d --name jenkins jcmds/jenkins-docker:latest
+```
+## Set chmod
+```
+# open terminal and execute:
+
+sudo chmod 777 /var/run/docker.sock
